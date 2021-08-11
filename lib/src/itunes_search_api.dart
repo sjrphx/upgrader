@@ -33,7 +33,8 @@ class ITunesSearchAPI {
       return null;
     }
 
-    final url = lookupURLByBundleId(bundleId, country: country ??= '')!;
+    final url =
+        '${lookupURLByBundleId(bundleId, country: country ??= '')!}&_cb=${DateTime.now().microsecondsSinceEpoch.toString()}';
     if (debugEnabled) {
       print('upgrader: download: $url');
     }
